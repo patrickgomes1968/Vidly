@@ -19,9 +19,8 @@ namespace Vidly.Models
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [Required][DateAddedValidator]
+        [Required]
         [Display(Name = "Date Added")]
-
         public DateTime DateAdded { get; set; }
 
         [Required][Range(1,25)]

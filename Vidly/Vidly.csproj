@@ -44,12 +44,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -159,7 +168,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -171,19 +182,27 @@
     <Compile Include="Migrations\201704201422209_InitialModel.Designer.cs">
       <DependentUpon>201704201422209_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704211658565_AddSubscribedToCustomers.cs" />
+    <Compile Include="Migrations\201704272200141_changing Genre.GenreName to Genre.Name.cs" />
+    <Compile Include="Migrations\201704272200141_changing Genre.GenreName to Genre.Name.Designer.cs">
+      <DependentUpon>201704272200141_changing Genre.GenreName to Genre.Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704272229480_check.cs" />
+    <Compile Include="Migrations\201704272229480_check.Designer.cs">
+      <DependentUpon>201704272229480_check.cs</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Migrations\201704211658565_AddSubscribedToCustomers.cs" />
     <Compile Include="Migrations\201704211658565_AddSubscribedToCustomers.Designer.cs">
       <DependentUpon>201704211658565_AddSubscribedToCustomers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704211705240_AddMembershipType.cs" />
+    </Compile>-->
+    <!--<Compile Include="Migrations\201704211705240_AddMembershipType.cs" />
     <Compile Include="Migrations\201704211705240_AddMembershipType.Designer.cs">
       <DependentUpon>201704211705240_AddMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704211923099_SeedMembershipTypes.cs" />
+    </Compile>-->
+    <!--<Compile Include="Migrations\201704211923099_SeedMembershipTypes.cs" />
     <Compile Include="Migrations\201704211923099_SeedMembershipTypes.Designer.cs">
       <DependentUpon>201704211923099_SeedMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704212109584_ApplyAnnotationsToCustomers.cs" />
+    </Compile>-->
+    <!--<Compile Include="Migrations\201704212109584_ApplyAnnotationsToCustomers.cs" />
     <Compile Include="Migrations\201704212109584_ApplyAnnotationsToCustomers.Designer.cs">
       <DependentUpon>201704212109584_ApplyAnnotationsToCustomers.cs</DependentUpon>
     </Compile>
@@ -206,12 +225,12 @@
     <Compile Include="Migrations\201704220339249_SeedGenre.cs" />
     <Compile Include="Migrations\201704220339249_SeedGenre.Designer.cs">
       <DependentUpon>201704220339249_SeedGenre.cs</DependentUpon>
-    </Compile>
+    </Compile>-->
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\BirthDateValidator.cs" />
-    <Compile Include="Models\DateAddedValidator.cs" />
+    <!--<Compile Include="Models\BirthDateValidator.cs" />
+    <Compile Include="Models\DateAddedValidator.cs" />-->
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -308,7 +327,13 @@
     <EmbeddedResource Include="Migrations\201704201422209_InitialModel.resx">
       <DependentUpon>201704201422209_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704211658565_AddSubscribedToCustomers.resx">
+    <EmbeddedResource Include="Migrations\201704272200141_changing Genre.GenreName to Genre.Name.resx">
+      <DependentUpon>201704272200141_changing Genre.GenreName to Genre.Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704272229480_check.resx">
+      <DependentUpon>201704272229480_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <!--<EmbeddedResource Include="Migrations\201704211658565_AddSubscribedToCustomers.resx">
       <DependentUpon>201704211658565_AddSubscribedToCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704211705240_AddMembershipType.resx">
@@ -334,7 +359,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704220339249_SeedGenre.resx">
       <DependentUpon>201704220339249_SeedGenre.cs</DependentUpon>
-    </EmbeddedResource>
+    </EmbeddedResource>-->
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

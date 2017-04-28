@@ -21,8 +21,8 @@ namespace Vidly.Models
 
         [Display(Name="Birth Date")]
         [DataType(DataType.Date)]
-        [BirthdateValidator(ErrorMessage = "Sorry, but cannot be over 110 or under 12")]
-        [Min18YearsIfMember]
+        //[BirthdateValidator(ErrorMessage = "Sorry, but cannot be over 110 or under 12")]
+        [Min18YearsIfAMember]
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? BirthDate { get; set; }
     }
